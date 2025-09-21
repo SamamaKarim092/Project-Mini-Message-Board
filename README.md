@@ -3,7 +3,7 @@
 **Mini Message Board** is a full-stack web application that allows users to post, view, and manage short messages in real time. Built with **React** (frontend) and **Express.js** (backend), it demonstrates how REST APIs and modern deployment practices can be combined in a simple yet effective project.  
 
 🔗 **Live Demo**:  
-👉 [Mini Message Board on Vercel](https://mini-message-board-zeta.vercel.app/)  
+👉 [Mini Message Board on Vercel](https://mini-message-board-git-production-samamakarim092s-projects.vercel.app/)  
 
 ---
 
