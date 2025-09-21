@@ -29,4 +29,15 @@ function createMessage(req, res) {
   res.status(201).json(newMessage);
 }
 
-module.exports = { getAllMessages, getMessageById, createMessage };
+function deleteMessage(req, res) {
+  const id = Number(req.params.id);
+  if (!Number.isInteger(id)) return res.status(400).json({ error: 'Invalid id' });
+
+  const messageIndex = messages.findIndex(m => m.id === id);
+  if (messageIndex === -1) return res.status(404).json({ error: 'Message not found' });
+
+  const deletedMessage = messages.splice(messageIndex, 1)[0];
+  res.json({ message: 'Message deleted successfully', deletedMessage });
+}
+
+module.exports = { getAllMessages, getMessageById, createMessage, deleteMessage };

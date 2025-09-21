@@ -1,11 +1,11 @@
 // index.js
 const express = require('express');
 const cors = require('cors');
-const messageRouter = require('./routes/messageRouter');
+const messageRouter = require('./routes/messagesRouter');
 
 const app = express();
 app.use(cors());        // allow frontend requests in dev
-app.use(express.json);  // parse JSON body (used by React fetch)
+app.use(express.json());  // parse JSON body (used by React fetch)
 app.use('/api/messages', messageRouter);
 
 // simple centralized error handler
