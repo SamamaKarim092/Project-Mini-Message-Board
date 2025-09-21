@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function MessageForm() {
   const [user, setUser] = useState('');
@@ -22,10 +22,43 @@ export default function MessageForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input value={user} onChange={e => setUser(e.target.value)} placeholder="Your name" />
-      <textarea value={text} onChange={e => setText(e.target.value)} placeholder="Your message" />
-      <button type="submit">Submit</button>
-    </form>
+    <div className="container">
+      <div className="form-container">
+        <div className="card">
+          <h2>Create New Message</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="user" className="form-label">Your Name</label>
+              <input 
+                id="user"
+                type="text"
+                value={user} 
+                onChange={e => setUser(e.target.value)} 
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="text" className="form-label">Your Message</label>
+              <textarea 
+                id="text"
+                value={text} 
+                onChange={e => setText(e.target.value)} 
+                placeholder="What's on your mind?"
+                required
+              />
+            </div>
+            
+            <div className="form-actions">
+              <Link to="/">
+                <button type="button" className="secondary">Cancel</button>
+              </Link>
+              <button type="submit">📝 Post Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
