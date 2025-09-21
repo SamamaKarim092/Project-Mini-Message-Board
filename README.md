@@ -53,8 +53,3 @@ This separation of concerns makes it easier to extend the project (e.g., by conn
   - `/client` → React frontend  
   - `/server` → Express backend  
 - Both deployed together under a single project.  
-
----
-
-## 📂 Project Structure  
-
